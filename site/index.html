@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>杉島 直哉 | Webマーケター / ディレクター</title>
+  <meta name="description" content="Webサイト制作から広告運用まで。事業の課題に寄り添い、解決まで伴走するパートナー。杉島直哉のポートフォリオサイト。">
+
+  <!-- GTM: GTM-XXXXXXX を取得後に置き換えてください -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --color-text: #1a1a1a;
+      --color-text-sub: #555;
+      --color-text-light: #888;
+      --color-bg: #ffffff;
+      --color-bg-alt: #f8f8f8;
+      --color-accent: #2563eb;
+      --color-accent-hover: #1d4ed8;
+      --color-border: #e5e5e5;
+      --font-sans: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-width: 960px;
+      --section-padding: 120px 0;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      transition: transform 0.3s;
+    }
+    nav .container {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 64px;
+    }
+    .nav-logo { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; color: var(--color-text); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem; font-weight: 500; color: var(--color-text-sub);
+      text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--color-text); }
+
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 20px; height: 2px; background: var(--color-text); margin: 5px 0; transition: 0.3s; }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 64px;
+    }
+    .hero-content { max-width: 700px; }
+    .hero-label {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--color-accent); margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+      line-height: 1.4; margin-bottom: 24px; letter-spacing: -0.01em;
+    }
+    .hero-name {
+      font-size: 1rem; font-weight: 400; color: var(--color-text-sub); margin-bottom: 8px;
+    }
+    .hero-role {
+      font-size: 0.85rem; font-weight: 500; color: var(--color-text-light);
+      letter-spacing: 0.06em;
+    }
+    .hero-cta {
+      display: inline-block; margin-top: 40px; padding: 14px 36px;
+      background: var(--color-text); color: #fff; text-decoration: none;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+      border-radius: 4px; transition: background 0.2s;
+    }
+    .hero-cta:hover { background: #333; }
+
+    /* ── Section common ── */
+    section { padding: var(--section-padding); }
+    .section-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--color-accent); margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700;
+      line-height: 1.4; margin-bottom: 40px;
+    }
+
+    /* ── About ── */
+    .about { background: var(--color-bg); }
+    .about-text { max-width: 680px; }
+    .about-text p {
+      font-size: 0.95rem; color: var(--color-text-sub);
+      margin-bottom: 20px; line-height: 2;
+    }
+
+    /* ── Strengths ── */
+    .strengths { background: var(--color-bg-alt); }
+    .strengths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .strength-card { padding: 0; }
+    .strength-num {
+      font-size: 3rem; font-weight: 700; color: var(--color-border);
+      line-height: 1; margin-bottom: 16px;
+    }
+    .strength-card h3 {
+      font-size: 1.05rem; font-weight: 600; margin-bottom: 16px; line-height: 1.5;
+    }
+    .strength-card p {
+      font-size: 0.88rem; color: var(--color-text-sub); line-height: 1.9;
+    }
+
+    /* ── Services ── */
+    .services { background: var(--color-bg); }
+    .services-intro {
+      font-size: 0.95rem; color: var(--color-text-sub);
+      margin-bottom: 48px; max-width: 600px;
+    }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .service-card {
+      padding: 32px; border: 1px solid var(--color-border); border-radius: 8px;
+      transition: box-shadow 0.2s;
+    }
+    .service-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .service-card h3 {
+      font-size: 1rem; font-weight: 600; margin-bottom: 16px;
+    }
+    .service-card p {
+      font-size: 0.85rem; color: var(--color-text-sub); line-height: 1.8;
+    }
+
+    /* ── Contact ── */
+    .contact { background: var(--color-bg-alt); }
+    .contact-intro {
+      font-size: 0.95rem; color: var(--color-text-sub);
+      margin-bottom: 16px; max-width: 640px;
+    }
+    .contact-examples {
+      font-size: 0.85rem; color: var(--color-text-light);
+      margin-bottom: 48px; max-width: 640px; line-height: 1.9;
+    }
+    .contact-form { max-width: 560px; }
+    .form-row { margin-bottom: 24px; }
+    .form-row label {
+      display: block; font-size: 0.8rem; font-weight: 500;
+      margin-bottom: 8px; letter-spacing: 0.02em;
+    }
+    .form-row input, .form-row textarea {
+      width: 100%; padding: 12px 16px; border: 1px solid var(--color-border);
+      border-radius: 4px; font-size: 0.9rem; font-family: var(--font-sans);
+      background: #fff; transition: border-color 0.2s; outline: none;
+    }
+    .form-row input:focus, .form-row textarea:focus {
+      border-color: var(--color-accent);
+    }
+    .form-row textarea { min-height: 140px; resize: vertical; }
+    .form-submit {
+      display: inline-block; padding: 14px 48px;
+      background: var(--color-accent); color: #fff; border: none;
+      font-size: 0.85rem; font-weight: 500; font-family: var(--font-sans);
+      letter-spacing: 0.04em; border-radius: 4px; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--color-accent-hover); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-message {
+      margin-top: 16px; font-size: 0.85rem; display: none;
+    }
+    .form-message.success { color: #16a34a; display: block; }
+    .form-message.error { color: #dc2626; display: block; }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 0; border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+    footer p {
+      font-size: 0.75rem; color: var(--color-text-light); letter-spacing: 0.04em;
+    }
+
+    /* ── Fade-in animation ── */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      :root { --section-padding: 80px 0; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; gap: 0;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--color-border);
+      }
+      .nav-links.open a { display: block; padding: 16px 24px; }
+      .hamburger { display: block; }
+      .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      .strengths-grid, .services-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="#" class="nav-logo">Naoya Sugishima</a>
+      <button class="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#strengths">Strengths</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-label">Web Marketing &amp; Direction</p>
+        <h1>Webサイト制作から広告運用まで。<br>事業の課題に寄り添い、<br>解決まで伴走するパートナー。</h1>
+        <p class="hero-name">杉島 直哉 | Naoya Sugishima</p>
+        <p class="hero-role">Webマーケター / ディレクター</p>
+        <a href="#contact" class="hero-cta">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="fade-in">
+        <p class="section-label">About</p>
+        <h2 class="section-title">「作って終わり」にしない。<br>成果にコミットいたします。</h2>
+        <div class="about-text">
+          <p>約8年間、事業会社にてデジタルマーケディングとWebプロモーションを牽引してきました。現在は、自らコードを書くWebサイト・LP制作から、生成AIを活用したクリエイティブ量産、データに基づくWeb広告運用までを一気通貫で実行しています。</p>
+          <p>事業会社のマーケターとして培った視点を活かし、デザインの綺麗さだけでなく「集客と売上」に直結するWebプロモーションを提供します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section id="strengths" class="strengths">
+    <div class="container">
+      <div class="fade-in">
+        <p class="section-label">Strengths</p>
+        <h2 class="section-title">3つの強み</h2>
+      </div>
+      <div class="strengths-grid">
+        <div class="strength-card fade-in">
+          <p class="strength-num">01</p>
+          <h3>成果から逆算した<br>Webサイト・LP制作</h3>
+          <p>ターゲットの心理を突いた情報設計から、HTML/CSS/JSを用いたコーディングまで自ら実装します。シミユレーター機能などの動的コンテンツも組み込み、CVR（コンバージョン率）を最大化するサイトを構築します。</p>
+        </div>
+        <div class="strength-card fade-in">
+          <p class="strength-num">02</p>
+          <h3>生成AIによる<br>高速なクリエイティブ検証</h3>
+          <p>Adobe Fireflyなどの生成AIを実務に組み込み、広告バナーやLPの素材をスピーディに制作します。圧倒的なスピードでA/Bテストのサイクルを回し、最短で効果的な「勝ちパターン」を見つけ出します。</p>
+        </div>
+        <div class="strength-card fade-in">
+          <p class="strength-num">03</p>
+          <h3>データ分析に基づく<br>精緻な広告運用</h3>
+          <p>Google広告やMeta広告の運用において、表面的なCPA（顧客獲得単価）だけでなく、ROI（投資対効果）を見据えた本質的な運用を行います。SQLやPythonを用いたデータ分析も活用し、無駄なコストを抑えて予算を最適化します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="fade-in">
+        <p class="section-label">Services</p>
+        <h2 class="section-title">支援内容</h2>
+        <p class="services-intro">ご予算や課題に合わせて、柔軟に対応いたします。</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <h3>Webサイト・LP制作</h3>
+          <p>情報設計、プロトタイプ開発、コーディング（HTML/CSS/JS）、LPO（ランディングページ最適化）、EFO（入力フォーム最適化）</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Web広告運用代行</h3>
+          <p>Google広告、Meta広告（Facebook/Instagram）等のプランニング・運用・改善策の提案</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>クリエイティブ制作</h3>
+          <p>生成AIを活用したバナー制作、広告用テキスト・訴求の企画</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="fade-in">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="contact-intro">お気軽にご相談ください。</p>
+        <p class="contact-examples">「集客できるWebサイト・LPを作りたい」「今の広告の費用対効果を改善したい」「制作から運用まで丸ごと任せたい」など、Webプロモーションの課題についてお気軽にお問い合わせください。現状のヒアリングをもとに、最適なアプローチをご提案いたします。</p>
+      </div>
+      <form class="contact-form fade-in" id="contactForm">
+        <div class="form-row">
+          <label for="name">氏名 <span style="color:#dc2626">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="山田 太郎">
+        </div>
+        <div class="form-row">
+          <label for="company">会社名</label>
+          <input type="text" id="company" name="company" placeholder="株式会社〇〇">
+        </div>
+        <div class="form-row">
+          <label for="email">メールアドレス <span style="color:#dc2626">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="example@company.com">
+        </div>
+        <div class="form-row">
+          <label for="message">ご相談内容 <span style="color:#dc2626">*</span></label>
+          <textarea id="message" name="message" required placeholder="ご相談内容をお書きください"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submitBtn">送信する</button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Naoya Sugishima. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Hamburger menu ──
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // ── Scroll fade-in ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── Contact form ──
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+      formMessage.className = 'form-message';
+      formMessage.style.display = 'none';
+
+      const data = {
+        name: form.name.value,
+        company: form.company.value,
+        email: form.email.value,
+        message: form.message.value,
+      };
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+          formMessage.textContent = '送信が完了しました。折り返しご連絡いたします。';
+          formMessage.className = 'form-message success';
+          form.reset();
+
+          // GTM event
+          if (window.dataLayer) {
+            dataLayer.push({ event: 'form_submit', form_name: 'contact' });
+          }
+        } else {
+          throw new Error('送信に失敗しました');
+        }
+      } catch (err) {
+        formMessage.textContent = '送信に失敗しました。時間を置いて再度お試しください。';
+        formMessage.className = 'form-message error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する';
+      }
+    });
+  </script>
+</body>
+</html>
