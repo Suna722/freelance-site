@@ -416,14 +416,13 @@
         });
 
         if (res.ok) {
-          formMessage.textContent = '送信が完了しました。折り返しご連絡いたします。';
-          formMessage.className = 'form-message success';
-          form.reset();
-
           // GTM event
           if (window.dataLayer) {
             dataLayer.push({ event: 'form_submit', form_name: 'contact' });
           }
+          // サンクスページへリダイレクト
+          window.location.href = '/thanks.html';
+          return;
         } else {
           throw new Error('送信に失敗しました');
         }
